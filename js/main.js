@@ -120,12 +120,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-   // Contact form submission
+  // Contact form submission
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
+      // Animación del botón
       anime({
         targets: '.submit-btn',
         scale: [1, 1.1, 1],
@@ -155,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Intentar enviar al servidor
         sendFormData(formData);
       } else {
-        alert('Por favor complete todos los campos requeridos');
+        alert('Por favor complete todos los campos requeridos (Nombre, Email y Mensaje)');
       }
     });
   }
@@ -183,8 +184,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Tu endpoint personalizado de Formspree
     const formspreeEndpoint = 'https://formspree.io/f/xblkovrp';
     
-    // Mostrar animación de carga
+    // Mostrar animación de carga en el botón
     const submitBtn = document.querySelector('.submit-btn');
+    const originalBtnText = submitBtn.innerHTML;
     submitBtn.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
     submitBtn.disabled = true;
     
@@ -206,21 +208,63 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => {
       if (response.ok) {
-        alert('¡Mensaje enviado con éxito! Te responderé lo antes posible.');
+        // Mostrar alerta de éxito
+        showAlert('¡Mensaje enviado con éxito! Te responderé lo antes posible.', 'success');
+        // Resetear formulario
         contactForm.reset();
       } else {
-        throw new Error('Error en la respuesta del servidor');
+        return response.json().then(err => {
+          throw new Error(err.error || 'Error en la respuesta del servidor');
+        });
       }
     })
     .catch(error => {
       console.error('Error al enviar el formulario:', error);
-      alert('El mensaje se ha guardado localmente. Intentaré enviarlo cuando recupere la conexión.');
+      showAlert('El mensaje se ha guardado localmente. Intentaré enviarlo cuando recupere la conexión.', 'warning');
     })
     .finally(() => {
-      // Restaurar el botón a su estado normal
-      submitBtn.innerHTML = 'Enviar Mensaje';
+      // Restaurar el botón a su estado original
+      submitBtn.innerHTML = originalBtnText;
       submitBtn.disabled = false;
     });
+  }
+
+  // Función para mostrar alertas personalizadas
+  function showAlert(message, type = 'success') {
+    // Eliminar alertas existentes
+    const existingAlert = document.querySelector('.custom-alert');
+    if (existingAlert) existingAlert.remove();
+    
+    // Crear elemento de alerta
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `custom-alert alert alert-${type}`;
+    alertDiv.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1050;
+      max-width: 400px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      animation: slideIn 0.3s ease-out;
+    `;
+    alertDiv.innerHTML = `
+      <div class="d-flex align-items-center">
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-triangle'} me-2"></i>
+        <span>${message}</span>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `;
+    
+    // Agregar al cuerpo
+    document.body.appendChild(alertDiv);
+    
+    // Configurar para que desaparezca automáticamente
+    setTimeout(() => {
+      alertDiv.style.animation = 'fadeOut 0.5s ease-out forwards';
+      setTimeout(() => {
+        if (alertDiv.parentNode) alertDiv.parentNode.removeChild(alertDiv);
+      }, 500);
+    }, 5000);
   }
 
   // Project details modal functionality
@@ -299,4 +343,18 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+  
+  // Añadir estilos para las alertas
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
 });
