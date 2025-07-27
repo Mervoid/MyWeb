@@ -160,8 +160,8 @@ document.addEventListener('DOMContentLoaded', function() {
     projectDetailContent.innerHTML = '<div class="loading-spinner"></div>';
     projectDetailContent.classList.add('loading');
     
-    // Load project content from index.html in project folder
-    fetch(`projects/${projectId}/index.html`)
+    // Load project content from external file
+    fetch(`projects/${projectId}.html`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -182,12 +182,6 @@ document.addEventListener('DOMContentLoaded', function() {
           duration: 800,
           easing: 'easeOutQuad'
         });
-        
-        // Load project-specific CSS
-        loadProjectCSS(projectId);
-        
-        // Load project-specific JS
-        loadProjectJS(projectId);
       })
       .catch(error => {
         console.error('Error loading project details:', error);
@@ -202,31 +196,6 @@ document.addEventListener('DOMContentLoaded', function() {
         projectDetailContent.classList.remove('loading');
         projectModal.show();
       });
-  }
-  
-  // Función para cargar CSS específico del proyecto
-  function loadProjectCSS(projectId) {
-    const existingLink = document.getElementById(`project-${projectId}-css`);
-    if (existingLink) return; // Ya está cargado
-    
-    const link = document.createElement('link');
-    link.id = `project-${projectId}-css`;
-    link.rel = 'stylesheet';
-    link.href = `projects/${projectId}/styles.css`;
-    
-    document.head.appendChild(link);
-  }
-  
-  // Función para cargar JS específico del proyecto
-  function loadProjectJS(projectId) {
-    const existingScript = document.getElementById(`project-${projectId}-js`);
-    if (existingScript) return; // Ya está cargado
-    
-    const script = document.createElement('script');
-    script.id = `project-${projectId}-js`;
-    script.src = `projects/${projectId}/main.js`;
-    
-    document.body.appendChild(script);
   }
   
   // Project cards hover effect
