@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Ing.E.Q.C</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <img src="assets/img/logo1.png" alt="Logo" height="40">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Sobre Mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Edinson Quispe Carrasco</h1>
+      <p class="hero-subtitle">Ingeniero de Sistemas & Desarrollador Web</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+        <a href="#contact" class="btn btn-outline-light">Contactar</a>
+      </div>
+    </div>
+    <div class="scroll-down">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>Sobre Mí</h2>
+        <p>Conoce más sobre mi trayectoria profesional y habilidades técnicas</p>
+      </div>
+      <div class="about-content">
+        <div class="about-img">
+          <img src="assets/img/Cargando.png" alt="Edinson Quispe">
+        </div>
+        <div class="about-text">
+          <h3>Ingeniero de Sistemas</h3>
+          <p>Soy estudiante de 8vo ciclo de Ingeniería de Sistemas en la Universidad César Vallejo, especializado en MySQL, Java, C++, desarrollo web y soporte técnico. Mi enfoque se centra en código limpio, arquitectura eficiente y diseño centrado en el usuario.</p>
+          <p>Apasionado por crear soluciones tecnológicas que resuelvan problemas reales, siempre buscando aprender nuevas tecnologías y mejorar mis habilidades.</p>
+          
+          <div class="skills">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Desarrollo Web</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Java</span>
+                <span>73%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="73"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>MySQL</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Html/CSS</span>
+                <span>82%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="82"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>C++</span>
+                <span>60%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="60"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Proyectos Destacados</h2>
+        <p>Explora mis trabajos recientes y soluciones tecnológicas</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="assets/img/Cargando.png" alt="Project 1">
+              <div class="project-overlay">
+                <a href="#" class="view-project" data-project="project1"><i class="fas fa-eye"></i></a>
+                <a href="#"><i class="fas fa-code"></i></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Sistema de Gestión Académica</h3>
+              <p>Plataforma web para gestión de estudiantes, profesores y cursos con panel administrativo.</p>
+              <div class="project-tags">
+                <span class="project-tag">Java</span>
+                <span class="project-tag">Spring Boot</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+              <a href="#" class="btn btn-outline-primary w-100 view-project" data-project="project1">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="assets/img/Cargando.png" alt="Project 2">
+              <div class="project-overlay">
+                <a href="#" class="view-project" data-project="project2"><i class="fas fa-eye"></i></a>
+                <a href="#"><i class="fas fa-code"></i></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>E-commerce Responsive</h3>
+              <p>Tienda online con carrito de compras, pasarela de pagos y sistema de recomendaciones.</p>
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">MongoDB</span>
+              </div>
+              <a href="#" class="btn btn-outline-primary w-100 view-project" data-project="project2">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="assets/img/Cargando.png" alt="Project 3">
+              <div class="project-overlay">
+                <a href="#" class="view-project" data-project="project3"><i class="fas fa-eye"></i></a>
+                <a href="#"><i class="fas fa-code"></i></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Aplicación Móvil de Salud</h3>
+              <p>Seguimiento de hábitos saludables con recordatorios, estadísticas y metas personalizadas.</p>
+              <div class="project-tags">
+                <span class="project-tag">Flutter</span>
+                <span class="project-tag">Firebase</span>
+                <span class="project-tag">API REST</span>
+              </div>
+              <a href="#" class="btn btn-outline-primary w-100 view-project" data-project="project3">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contacto</h2>
+        <p>¿Interesado en trabajar juntos? ¡Contáctame!</p>
+      </div>
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Nombre" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="col-12">
+              <input type="text" class="form-control" placeholder="Asunto">
+            </div>
+            <div class="col-12">
+              <textarea class="form-control" placeholder="Mensaje" rows="5" required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary submit-btn">Enviar Mensaje</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <h5>Email</h5>
+          <p>edinson.bns@gmail.com</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <h5>Teléfono</h5>
+          <p>+51 989 530 163</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <h5>Ubicación</h5>
+          <p>Lima, Perú</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/img/Cargando2 sin fondo.png" alt="Logo">
+        </div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Edinson Quispe Carrasco. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Details Modal -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="projectDetailContent">
+          <!-- Content will be loaded here dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Anime.js -->
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
