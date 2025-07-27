@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
     projectDetailContent.classList.add('loading');
     
     // Load project content from external file
-    fetch(`projects/${projectId}.html`)
+    fetch(`projects/${projectId}/${projectId}.html`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
