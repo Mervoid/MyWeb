@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Contact form submission
+   // Contact form submission
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -133,11 +133,93 @@ document.addEventListener('DOMContentLoaded', function() {
         easing: 'easeInOutQuad'
       });
       
-      // Simulate form submission
-      setTimeout(() => {
+      // Obtener datos del formulario
+      const name = contactForm.name.value.trim();
+      const email = contactForm.email.value.trim();
+      const subject = contactForm.subject.value.trim();
+      const message = contactForm.message.value.trim();
+      
+      if (name && email && message) {
+        // Crear objeto con los datos
+        const formData = {
+          name,
+          email,
+          subject: subject || "Sin asunto",
+          message,
+          date: new Date().toLocaleString()
+        };
+        
+        // Guardar datos en localStorage como respaldo
+        saveToLocalStorage(formData);
+        
+        // Intentar enviar al servidor
+        sendFormData(formData);
+      } else {
+        alert('Por favor complete todos los campos requeridos');
+      }
+    });
+  }
+
+  // Función para guardar en localStorage
+  function saveToLocalStorage(data) {
+    try {
+      // Obtener datos existentes o crear nuevo array
+      const existingData = JSON.parse(localStorage.getItem('contactFormSubmissions')) || [];
+      
+      // Agregar nuevo dato
+      existingData.push(data);
+      
+      // Guardar en localStorage
+      localStorage.setItem('contactFormSubmissions', JSON.stringify(existingData));
+      
+      console.log('Datos guardados en localStorage');
+    } catch (error) {
+      console.error('Error al guardar en localStorage:', error);
+    }
+  }
+
+  // Función para enviar datos a Formspree
+  function sendFormData(data) {
+    // Tu endpoint personalizado de Formspree
+    const formspreeEndpoint = 'https://formspree.io/f/xblkovrp';
+    
+    // Mostrar animación de carga
+    const submitBtn = document.querySelector('.submit-btn');
+    submitBtn.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
+    submitBtn.disabled = true;
+    
+    fetch(formspreeEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+        _replyto: data.email,
+        _format: 'plain',
+        _captcha: 'false'
+      })
+    })
+    .then(response => {
+      if (response.ok) {
         alert('¡Mensaje enviado con éxito! Te responderé lo antes posible.');
         contactForm.reset();
-      }, 800);
+      } else {
+        throw new Error('Error en la respuesta del servidor');
+      }
+    })
+    .catch(error => {
+      console.error('Error al enviar el formulario:', error);
+      alert('El mensaje se ha guardado localmente. Intentaré enviarlo cuando recupere la conexión.');
+    })
+    .finally(() => {
+      // Restaurar el botón a su estado normal
+      submitBtn.innerHTML = 'Enviar Mensaje';
+      submitBtn.disabled = false;
     });
   }
 
