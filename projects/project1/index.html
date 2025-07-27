@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixNull - Componentes de PC y Soporte Técnico</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="css/stylesindex.css">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                <i class="fas fa-microchip"></i>
+                <span>FixNull</span>
+            </a>
+            </div>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <!-- Botón de Login si NO está logueado -->
+                    <li id="loginMenuItem"><a href="login.html">Login</a></li>
+                    <li id="invMenuItem" style="display:none;"><a href="inventory.html">Inventario</a></li>
+                </ul>
+            </nav>
+            
+           
+            <a href="https://wa.me/1234567890" class="whatsapp-contact" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Componentes de <span>PC</span> y Soporte Técnico Profesional</h1>
+            <p>Ofrecemos los mejores componentes de computadora y servicios técnicos especializados. Todo lo que necesitas para potenciar tu equipo.</p>
+            <div class="hero-buttons">
+                <a href="products.html" class="btn btn-primary">Ver Productos</a>
+                <a href="#servicios" class="btn btn-secondary">Nuestros Servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-title">
+            <h2>¿Por Qué Elegirnos?</h2>
+            <p>Somos tu mejor opción para componentes de PC y servicios técnicos</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3>Entrega Rápida</h3>
+                <p>Disfruta de envíos rápidos y <b>totalmente gratis</b> dentro de <b>Lima</b>.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Soporte 24/7</h3>
+                <p>Asistencia técnica disponible siempre que lo necesites</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Garantía Extendida</h3>
+                <p>Hasta 3 años de garantía en todos nuestros productos</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Servicio Profesional</h3>
+                <p>Técnicos certificados con más de 10 años de experiencia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="productos">
+        <div class="section-title">
+            <h2>Nuestros Productos</h2>
+            <p>Componentes de calidad para armar tu PC ideal</p>
+        </div>
+        <div class="products-filter">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="procesadores">Procesadores</button>
+            <button class="filter-btn" data-filter="tarjetas">Tarjetas Gráficas</button>
+            <button class="filter-btn" data-filter="memorias">Memorias RAM</button>
+            <button class="filter-btn" data-filter="almacenamiento">Almacenamiento</button>
+        </div>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card animate-on-scroll" data-category="procesadores">
+                <div class="product-image">
+                    <i class="fas fa-microchip fa-5x"></i>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Procesadores</div>
+                    <h3 class="product-title">AMD Ryzen 9 5900X</h3>
+                    <p class="product-description">12 núcleos, 24 hilos, hasta 4.8GHz, compatible con AM4</p>
+                    <div class="product-price">S/.489.99</div>
+                    <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20el%20producto:%20AMD%20Ryzen%209%205900X" class="whatsapp-buy-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                    </a>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card animate-on-scroll" data-category="tarjetas">
+                <div class="product-image">
+                    <i class="fas fa-video fa-5x"></i>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Tarjetas Gráficas</div>
+                    <h3 class="product-title">NVIDIA RTX 3080 Ti</h3>
+                    <p class="product-description">12GB GDDR6X, 10240 núcleos CUDA, ray tracing</p>
+                    <div class="product-price">S/.1,099.99</div>
+                    <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20el%20producto:%20NVIDIA%20RTX%203080%20Ti" class="whatsapp-buy-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                    </a>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card animate-on-scroll" data-category="memorias">
+                <div class="product-image">
+                    <i class="fas fa-memory fa-5x"></i>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Memorias RAM</div>
+                    <h3 class="product-title">Corsair Vengeance RGB 32GB</h3>
+                    <p class="product-description">DDR4 3600MHz, CL16, iluminación RGB</p>
+                    <div class="product-price">S/.169.99</div>
+                    <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20el%20producto:%20Corsair%20Vengeance%20RGB%2032GB" class="whatsapp-buy-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                    </a>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card animate-on-scroll" data-category="almacenamiento">
+                <div class="product-image">
+                    <i class="fas fa-hdd fa-5x"></i>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Almacenamiento</div>
+                    <h3 class="product-title">Samsung 980 Pro 1TB</h3>
+                    <p class="product-description">NVMe M.2, PCIe 4.0, hasta 7000MB/s lectura</p>
+                    <div class="product-price">S/.149.99</div>
+                    <a href="https://wa.me/1234567890?text=Hola,%20estoy%20interesado%20en%20el%20producto:%20Samsung%20980%20Pro%201TB" class="whatsapp-buy-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="section-title">
+            <h2>Nuestros Servicios Técnicos</h2>
+            <p>Soporte profesional para todos tus dispositivos</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-desktop"></i></div>
+                <h3>Reparación de Computadoras</h3>
+                <p>Diagnóstico y solución de problemas en equipos de escritorio y portátiles.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> Cambio de piezas defectuosas</li>
+                    <li><i class="fas fa-check-circle"></i> Eliminación de virus y malware</li>
+                    <li><i class="fas fa-check-circle"></i> Optimización del sistema</li>
+                    <li><i class="fas fa-check-circle"></i> Recuperación de datos</li>
+                </ul>
+                <a href="https://wa.me/1234567890?text=Hola,%20necesito%20servicio%20de%20reparación%20de%20computadoras" class="whatsapp-buy-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Solicitar Servicio
+                </a>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-server"></i></div>
+                <h3>Armado de PCs Personalizadas</h3>
+                <p>Construimos tu PC ideal según tus necesidades y presupuesto.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> Gaming de alto rendimiento</li>
+                    <li><i class="fas fa-check-circle"></i> Estaciones de trabajo</li>
+                    <li><i class="fas fa-check-circle"></i> Equipos de oficina</li>
+                    <li><i class="fas fa-check-circle"></i> Sistemas de edición</li>
+                </ul>
+                <a href="https://wa.me/1234567890?text=Hola,%20quiero%20información%20sobre%20armado%20de%20PC%20personalizada" class="whatsapp-buy-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Solicitar Servicio
+                </a>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-wifi"></i></div>
+                <h3>Redes, Camaras y Conectividad</h3>
+                <p>Soluciones profesionales para tu red doméstica o de oficina.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle"></i> Instalación de redes</li>
+                    <li><i class="fas fa-check-circle"></i> Configuración de routers</li>
+                    <li><i class="fas fa-check-circle"></i> Solución de problemas de conexión</li>
+                    <li><i class="fas fa-check-circle"></i> Sistemas de seguridad</li>
+                </ul>
+                <a href="https://wa.me/1234567890?text=Hola,%20necesito%20servicio%20de%20redes%20y%20conectividad" class="whatsapp-buy-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Solicitar Servicio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonios">
+        <div class="section-title">
+            <h2>Lo Que Dicen Nuestros Clientes</h2>
+            <p>Experiencias reales con nuestros productos y servicios</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card animate-on-scroll">
+                <p class="testimonial-text">Excelente servicio técnico. Repararon mi portátil en menos de 24 horas y el precio fue muy razonable. ¡Totalmente recomendados!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <h4>Carlos Mendoza</h4>
+                        <p>Cliente desde 2020</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card animate-on-scroll">
+                <p class="testimonial-text">Compré todos los componentes para mi PC gamer aquí. La asesoría fue profesional y el armado quedó perfecto. Mi equipo funciona increíble.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <h4>Ana Rodríguez</h4>
+                        <p>Cliente desde 2021</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card animate-on-scroll">
+                <p class="testimonial-text">Necesitaba actualizar los equipos de mi oficina y estos chicos hicieron un trabajo impecable. Instalaron todo rápidamente y sin problemas.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <h4>Roberto Jiménez</h4>
+                        <p>Empresa TechCorp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content animate-on-scroll">
+            <h2>¿Listo para Mejorar tu Equipo?</h2>
+            <p>Contáctanos ahora mismo por WhatsApp y recibe atención inmediata</p>
+            <a href="https://wa.me/1234567890" class="whatsapp-cta" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>FixNull</h3>
+                <p>Tu tienda de confianza para componentes de PC y servicios técnicos profesionales.</p>
+                <div class="social-links">
+                    <a href="#" class="pop-01-social-link pop-01-facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="pop-01-social-link pop-01-instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="pop-01-social-link pop-01-twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="pop-01-social-link pop-01-tiktok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Productos</h3>
+                <ul class="footer-links">
+                    <li><a href="products.html">Procesadores</a></li>
+                    <li><a href="products.html">Tarjetas Gráficas</a></li>
+                    <li><a href="products.html">Memorias RAM</a></li>
+                    <li><a href="products.html">Almacenamiento</a></li>
+                    <li><a href="products.html">Periféricos</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i><span>Av. Felipe Pinglo Alva, Lima - Comas</span></li>
+                    <li><i class="fas fa-phone-alt"></i><span>(01) 558-2224</span></li>
+                    <li><i class="fab fa-whatsapp"></i><span>(+51) 989-530-163</span></li>
+                    <li><i class="fas fa-envelope"></i><span>infoFixNull@gmail.com</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 FixNull. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mainNav = document.getElementById('mainNav');
+        menuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuBtn.innerHTML = mainNav.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        // Close menu on link click
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        // Product Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                productCards.forEach(card => {
+                    card.style.display = (filter === 'all' || card.getAttribute('data-category') === filter)
+                        ? 'flex' : 'none';
+                });
+            });
+        });
+        // Animation on Scroll
+        function animateOnScroll() {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight / 1.3) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                }
+            });
+        });
+        // WhatsApp Number Replacement
+        document.addEventListener('DOMContentLoaded', () => {
+            const whatsappNumber = '+51989530163';
+            document.querySelectorAll('[href*="wa.me"]').forEach(link => {
+                link.href = link.href.replace(/wa\.me\/\d+/, `wa.me/${whatsappNumber}`);
+            });
+        });
+    </script>
+    <!-- Lógica de admin: login y mostrar Inventario -->
+    <script src="js/admin.js"></script>
+
+
+
+
+   <!-- PopUP  MENSAJE pajina de inicio -->
+
+
+    <div class="popup-01-clase" id="popup-01-clase">
+  <div class="popup-content-01-clase">
+    <span class="close-btn-01-clase">&times;</span>
+    <div class="popup-message-01-clase">
+      <!-- EDITA ESTE MENSAJE DIRECTAMENTE -->
+
+        <h1>En Mantenimiento <br>
+        por favor ir a <a href="products.html">PRODUCTOS</a></h1>
+
+      <!-- EDITA ESTE MENSAJE DIRECTAMENTE -->
+    </div>
+  </div>
+</div>
+
+<style>
+  /* ESTILOS ESPECÍFICOS (01-Clase) */
+  .popup-01-clase {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .popup-01-clase.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .popup-content-01-clase {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+    width: 85%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow: auto;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+  }
+  
+  .popup-01-clase.active .popup-content-01-clase {
+    transform: scale(1);
+  }
+  
+  .close-btn-01-clase {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s;
+  }
+  
+  .close-btn-01-clase:hover {
+    color: #ff0000;
+  }
+  
+  .popup-message-01-clase {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px 10px;
+    text-align: center;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .popup-content-01-clase {
+      width: 90%;
+      padding: 25px 15px;
+    }
+    
+    .popup-message-01-clase {
+      font-size: 16px;
+      padding: 15px 5px;
+    }
+    
+    .close-btn-01-clase {
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .popup-content-01-clase {
+      width: 95%;
+    }
+    
+    .popup-message-01-clase {
+      font-size: 15px;
+    }
+  }
+</style>
+
+<script>
+  // Script de control (se ejecuta solo en index.html)
+  document.addEventListener('DOMContentLoaded', function() {
+    if(window.location.pathname.includes('index.html')) {
+      const popup = document.getElementById('popup-01-clase');
+      const closeBtn = document.querySelector('.close-btn-01-clase');
+      
+      // Mostrar popup
+      setTimeout(() => {
+        popup.classList.add('active'); // poner active entre las 'active' para activar el pop up
+      }, 500);
+      
+      // Cerrar con botón
+      closeBtn.addEventListener('click', () => {
+        popup.classList.remove('active');
+      });
+      
+      // Cerrar haciendo click fuera del contenido
+      popup.addEventListener('click', (e) => {
+        if(e.target === popup) {
+          popup.classList.remove('active');
+        }
+      });
+    }
+  });
+</script>
+
+
+
+
+</body>
+</html>
